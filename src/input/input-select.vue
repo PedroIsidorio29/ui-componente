@@ -2,19 +2,19 @@
   <div class="col-md-3 col-sm-6 col-xs-12">
     <q-select
       class="q-mx-md"
-      :model-value="modelValue"
-      :label="label"
-      :options="optionCopy.length ? optionCopy : valores"
       option-value="value"
       option-label="description"
       option-disable="disable"
+      clear-icon="close"
+      clearable
       map-options
       emit-value
-      clearable
       dense
       use-input
       no-error-icon
-      clear-icon="close"
+      :model-value="modelValue"
+      :label="label"
+      :options="optionCopy.length ? optionCopy : valores"
       :error="!!errors"
       :error-message="errors"
       :disable="disable"

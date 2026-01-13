@@ -3,25 +3,18 @@
     <q-input
       :model-value="dateView"
       :label="label"
-      :class="classProps || 'q-mx-md'"
+      class="q-mx-md"
+      clear-icon="close"
+      clearable
       dense
       no-error-icon
       :error="!!errors"
       :error-message="errors"
       :disable="disable"
-      @focus="openDatePicker"
+      @click.stop="openDatePicker"
+      @clear="clearDate"
     >
       <template #append>
-        <q-btn
-          v-if="modelValue"
-          size="sm"
-          color="grey-6"
-          round
-          flat
-          icon="fa-solid fa-close"
-          @click.prevent="clearDate"
-        />
-
         <q-icon name="event" class="cursor-pointer q-ml-sm">
           <q-popup-proxy
             ref="inputDate"
@@ -51,7 +44,6 @@ const props = defineProps<
   TInput<string | null> & {
     errors?: string
     disable?: boolean
-    classProps?: string
   }
 >()
 

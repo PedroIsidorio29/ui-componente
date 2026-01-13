@@ -1,15 +1,15 @@
 <template>
   <div class="col-md-3 col-sm-6 col-xs-12">
     <q-input
-      :model-value="inputValue"
-      :label="label"
-      clearable
+      class="q-mx-md"
       clear-icon="close"
+      clearable
       dense
       no-error-icon
+      :model-value="inputValue"
+      :label="label"
       :error="!!errors"
       :error-message="errors"
-      :class="margim ? 'q-mx-md' : ''"
       :disable="disable"
       @update:model-value="update"
     />
@@ -25,13 +25,10 @@ const props = defineProps<
     errors?: string
     disable?: boolean
     max?: number
-    margim?: boolean
   }
 >()
 
-const emit = defineEmits<{
-  (e: "update:modelValue", value: string | null): void
-}>()
+const emit = defineEmits<{(e: "update:modelValue", value: string | null): void}>()
 
 /* ===========================
  * Label
