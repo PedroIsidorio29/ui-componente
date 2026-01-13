@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "bundler",
+    "module": "ESNext",
+    "target": "ESNext",
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "declarationDir": "dist",
+    "emitDeclarationOnly": false,
+    "moduleDetection": "force", 
+    
+    /* Paths */
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    
+  }
+}
